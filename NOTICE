@@ -1,0 +1,93 @@
+# RawForge — Third-Party Notices
+
+RawForge 自身源代码采用 MIT 许可（见 `LICENSE`）。本文件列明本项目所依赖、
+且会随二进制分发产物一同提供的第三方开源组件及其许可条款。
+
+RawForge source code is licensed under the MIT License (see `LICENSE`). This
+document lists third-party open-source components that RawForge depends on and
+that are redistributed together with the binary build.
+
+---
+
+## 1. 第三方组件清单 / Third-Party Components
+
+| 组件 / Component | 版本 | 许可 / License | 用途 / Purpose |
+|---|---|---|---|
+| [LibRaw](https://www.libraw.org/)（via `rawpy` 0.27.1） | 0.21+ | **GNU LGPL v2.1**（或 CDDL 1.0，二选一） | RAW 解码、去马赛克、高光重建 |
+| [rawpy](https://github.com/letmaik/rawpy) | 0.27.1 | MIT © 2014 Maik Riechert | LibRaw 的 Python 绑定 |
+| [lensfun](https://lensfun.github.io/)（via `lensfunpy` 1.18.0） | 0.3.x | **GNU LGPL v3** | 镜头畸变 / 色差 / 暗角光学数据库 |
+| [lensfunpy](https://github.com/letmaik/lensfunpy) | 1.18.0 | MIT © 2014 Maik Riechert | lensfun 的 Python 绑定 |
+| [Qt for Python (PySide6)](https://doc.qt.io/qtforpython/) | 6.11.2 | **LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only** | 图形界面框架 |
+| [OpenCV](https://opencv.org/)（opencv-python） | 5.0.0 | Apache License 2.0 | 向量化图像运算原语 |
+| [NumPy](https://numpy.org/) | 2.5.2 | BSD 3-Clause | 数值计算基础 |
+| [Pillow](https://python-pillow.org/) | 12.3.0 | HPND | JPEG 编码（4:4:4） |
+| [tifffile](https://github.com/cgohlke/tifffile) | 2026.8.23 | BSD 3-Clause | 16-bit TIFF / Linear DNG 写入 |
+| [ExifRead](https://github.com/ianare/exif-py) | 3.5.1 | BSD 2-Clause | EXIF 元数据解析 |
+
+### 构建工具（不进入分发产物）/ Build-time only (not redistributed)
+
+| 组件 | 版本 | 许可 | 说明 |
+|---|---|---|---|
+| [PyInstaller](https://pyinstaller.org/) | 6.22.2 | GPL v2（含 bootloader 例外条款） | 仅用于构建可执行文件；其 bootloader 受 GPL 例外条款约束，允许用于任意许可的最终程序，不使本项目的产物受 GPL 传染 |
+
+---
+
+## 2. LGPL 合规声明 / LGPL Compliance
+
+`dist/RawForge/` 下的**二进制分发产物**中包含以动态链接方式提供的 LGPL 组件
+（LibRaw LGPL v2.1、lensfun LGPL v3、PySide6 LGPL v3）。依据 LGPL 条款，分发
+该产物时须满足：
+
+1. **可替换性**：接收者须能够用修改过的版本替换上述 LGPL 库并重新链接程序。
+   本项目以 `onedir` 方式分发，`_internal/` 中保留了这些库的独立二进制文件，
+   用户可直接替换对应 `.dll` / `.pyd`；源码分发模式下通过 `requirements.txt`
+   从 PyPI 正常安装即可。
+2. **许可文本保留**：分发时须随附上述 LGPL 库的许可文本副本。
+3. **源码获取**：上述 LGPL 库的完整源代码可从各自上游项目获取（见上表链接），
+   本项目未对这些库做任何修改。
+
+RawForge 自身代码为 MIT 许可，仅通过标准公开 API **调用**这些库、未静态链接、
+未修改其源码，因此**不触发 LGPL 的传染条款**；上述义务仅适用于随产物一起分发
+这些库二进制文件的情形。
+
+The binary build under `dist/RawForge/` redistributes LGPL-licensed components
+(LibRaw LGPL v2.1, lensfun LGPL v3, PySide6 LGPL v3) as dynamically linked
+libraries. Per the LGPL, redistribution of that build requires that recipients
+can (a) relink against a modified version of those libraries — satisfied by the
+`onedir` layout that keeps the libraries as separate binaries under
+`_internal/`, (b) receive copies of the LGPL license texts, and (c) obtain the
+libraries' source from their upstream projects. RawForge's own code is MIT and
+only *uses* these libraries through their public APIs without modifying them,
+so no LGPL copyleft obligation attaches to the RawForge source itself.
+
+---
+
+## 3. 商标声明 / Trademark
+
+**DxO**、**PureRAW**、**DeepPRIME** 是 DxO Labs 的商标或注册商标。
+**Lightroom** 与 **Capture One** 分别为 Adobe 与 Capture One A/S 的商标。
+**Canon**、**EOS**、**RF** 为 Canon Inc. 的商标。
+
+本项目提及上述名称**仅用于说明软件的功能定位与互操作性**（例如「可对标 DxO
+PureRAW 的工作流」「输出可被 Lightroom 读取的 Linear DNG」），
+**本项目与上述公司无任何关联、未获其授权或背书**，亦未使用其任何专有代码、
+模型或数据。
+
+**DxO**, **PureRAW** and **DeepPRIME** are trademarks or registered trademarks
+of DxO Labs. **Lightroom** and **Capture One** are trademarks of Adobe and
+Capture One A/S respectively. **Canon**, **EOS** and **RF** are trademarks of
+Canon Inc. These names are referenced solely to describe functional positioning
+and interoperability. This project is **not affiliated with, authorized by, or
+endorsed by** any of these companies, and uses no proprietary code, models or
+data from them.
+
+---
+
+## 4. 示例图片 / Sample Images
+
+`compare/` 目录下的对比样张由 Canon EOS R6 Mark III 的 RAW 文件生成，
+仅供技术演示与效果对比之用，其著作权归拍摄者所有，未经许可不得挪作商业用途。
+
+Sample images under `compare/` are generated from a RAW file shot on a Canon
+EOS R6 Mark III and are included for technical demonstration only. Copyright
+belongs to the photographer; commercial reuse is not permitted.

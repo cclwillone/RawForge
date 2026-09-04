@@ -1,0 +1,10 @@
+# RawForge 依赖清单
+# 安装: pip install -r requirements.txt
+numpy>=1.26
+rawpy>=0.19
+opencv-python>=4.8
+Pillow>=10.0
+PySide6>=6.5
+exifread>=3.0
+lensfunpy>=1.14
+tifffile>=2023.7

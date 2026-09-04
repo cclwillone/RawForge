@@ -1,0 +1,57 @@
+# ============ Python ============
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+.Python
+.pytest_cache/
+
+# ============ 虚拟环境 ============
+.venv/
+venv/
+env/
+
+# ============ 打包产物（体积大，请通过 GitHub Release 分发）============
+build/
+dist/
+*.exe
+*.msi
+*.dmg
+# 注：RawForge.spec 是打包配置，需纳入版本管理以便复现构建
+
+# ============ 中间诊断图（仅 compare 下 README 引用的对比图入库）============
+compare/*_lite.jpg
+compare/*_rawforge_1.jpg
+compare/*_compare_base.png
+compare/*_triple.png
+compare/*_triple_thumb.png
+compare/batch/
+
+# ============ 处理输出（程序生成结果，不入仓库）============
+out/
+out_exe_verify/
+*_rawforge.jpg
+*_rawforge.tif
+*_rawforge.tiff
+*_rawforge.png
+*_rawforge.dng
+*_base.jpg
+
+# ============ 编辑器 / IDE ============
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============ 操作系统 ============
+Thumbs.db
+ehthumbs.db
+.DS_Store
+desktop.ini
+
+# ============ 调试临时产物 ============
+_diag_*.png
+_diag_*.jpg
+rawforge_lifecycle.txt
+*.log
