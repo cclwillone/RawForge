@@ -55,3 +55,6 @@ _diag_*.png
 _diag_*.jpg
 rawforge_lifecycle.txt
 *.log
+
+# ============ 本地资料（不随仓库分发）============
+RawForge 开发过程总结.html

@@ -185,7 +185,6 @@ RawForge/
 ├── setup_env.bat          # One-click environment setup
 ├── run.bat                # One-click launch
 ├── RawForge.spec          # PyInstaller spec (reproducible builds)
-├── DEVELOPMENT_SUMMARY.html  # Development retrospective
 ├── LICENSE                # MIT
 ├── NOTICE                 # Third-party components & compliance
 └── README.md / README_EN.md

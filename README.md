@@ -176,7 +176,6 @@ RawForge/
 ├── setup_env.bat          # 一键安装环境
 ├── run.bat                # 一键启动
 ├── RawForge.spec          # PyInstaller 打包配置（可复现构建）
-├── DEVELOPMENT_SUMMARY.html  # 开发过程总结
 ├── LICENSE                # MIT
 ├── NOTICE                 # 第三方组件与合规声明
 └── README.md / README_EN.md
